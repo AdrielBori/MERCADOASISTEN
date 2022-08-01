@@ -122,17 +122,18 @@ function cerrarSession(e){
                     'ingrese algun producto?',
                     'question'
                   ) */
-                  alert("error")
+            alert("error")
             }else{
                 userNew=new UserNew(nombreNewUser,passNewUser,emailNewUser)
                 
                     let restaurar=JSON.parse(localStorage.getItem("dataUser"))
-                    
+                    if(restaurar===null){
+                        dataUser.push(userNew)
+                        localStorage.setItem("dataUser",JSON.stringify(dataUser))
+                    }else{
                     restaurar.forEach(element=>{
                         dataUser.push(element)
-                    })
                     dataUser.push(userNew)
-                    console.log(dataUser)
                     localStorage.removeItem("dataUser")
                     localStorage.setItem("dataUser",JSON.stringify(dataUser))
                     navUsuario = document.getElementById("formInicioUser")
@@ -143,9 +144,11 @@ function cerrarSession(e){
                             <button type="submit">Inicie Session </button>
                             <button type="button" onclick="nuevoUser()">crear Usuario </button>
                         </form>`
+                    })
+                    location.reload()
             }
     }
-
+    }
     function nuevoUser(){
         navUsuario = document.getElementById("formInicioUser")
         navUsuario.innerHTML=`
@@ -171,38 +174,5 @@ function cerrarSession(e){
         this.email=emailNewUser;
         this.compras=[]
     }
-
-}
-function saveUser(){
-    let nombreNewUser=document.getElementById("nombreNewUser").value
-        let passNewUser=document.getElementById("passNewUser").value
-        let emailNewUser=document.getElementById("emailNewUser").value
-        if (nombreNewUser === ""|| passNewUser=== ""||emailNewUser==="" ){
-                  /*   return Swal.fire(
-                'Sin valores?',
-                'ingrese algun producto?',
-                'question'
-              ) */
-              alert("error")
-        }else{
-            userNew=new UserNew(nombreNewUser,passNewUser,emailNewUser)
-            alert(JSON.stringify(userNew))
-            let restaurar=JSON.parse(localStorage.getItem("dataUser"))
-                restaurar.forEach(element=>{
-                    dataUser.push(element)
-                })
-                dataUser.push(userNew)
-                localStorage.removeItem("dataUser")
-                localStorage.setItem("dataUser",JSON.stringify(dataUser))
-            navUsuario = document.getElementById("formInicioUser")
-            navUsuario.innerHTML=`
-            <form id="inicioSession">
-                <input type="email" id="emailUsActive" placeholder="Ingrese email de usuario">
-                <input type="password" id="passwUsActive" placeholder="Ingrese Contraseña">
-                <button type="submit">Inicie Session </button>
-                <button type="button" onclick="nuevoUser()">crear Usuario </button>
-            </form>`
-        }
-
 
 }
