@@ -8,6 +8,18 @@ let userNew=undefined
 let navUsuario=undefined
 let respuesta
 
+const porcionCode=`
+<form id="inicioSession">
+    <input type="email" id="emailUsActive" placeholder="Ingrese email de usuario">
+    <input type="password" id="passwUsActive" placeholder="Ingrese Contraseña">
+    <div>
+    <button type="submit">Inicie Session </button>
+    <button type="button" onclick="nuevoUser()">crear Usuario </button>
+    </div>
+</form>`
+
+
+
 /*carga de datos de productos*/
 fetch('JS/datosProductos.json')
     .then((resp)=>resp.json())
@@ -38,14 +50,7 @@ fetch('JS/datosProductos.json')
     })
 /*logica de usuario*/
 navUsuario = document.getElementById("formInicioUser")
-        navUsuario.innerHTML=`
-        <form id="inicioSession">
-            <input type="email" id="emailUsActive" placeholder="Ingrese email de usuario">
-            <input type="password" id="passwUsActive" placeholder="Ingrese Contraseña">
-            <button type="submit">Inicie Session </button>
-            <button type="button" onclick="nuevoUser()">crear Usuario </button>
-        </form>`
-
+        navUsuario.innerHTML=porcionCode
 /*usuario activo*/
         if(userActive===undefined){
             const restaurar=JSON.parse(localStorage.getItem("userActive"))
@@ -87,6 +92,7 @@ navUsuario = document.getElementById("formInicioUser")
                                     navUsuario = document.getElementById("formInicioUser")
                                     navUsuario.innerHTML=`<h4>Bienvenido ${element.nombre}</h4>
                                         <button type="button" id="xSession" onclick="cerrarSession()">Cerrar Session </button>
+
                                         `                      
                                     let valores=JSON.stringify(element)
                                     localStorage.setItem("userActive",valores)
@@ -101,65 +107,54 @@ navUsuario = document.getElementById("formInicioUser")
         /*cierre de session*/
 function cerrarSession(e){
     navUsuario = document.getElementById("formInicioUser")
-        navUsuario.innerHTML=`
-        <form id="inicioSession">
-            <input type="email" id="emailUsActive" placeholder="Ingrese email de usuario">
-            <input type="password" id="passwUsActive" placeholder="Ingrese Contraseña">
-            <button type="submit">Inicie Session </button>
-            <button type="button" onclick="nuevoUser()">crear Usuario </button>
-        </form>`
+        navUsuario.innerHTML=porcionCode
     localStorage.removeItem('userActive');
     userActive=undefined
     location.reload()
     }
     function saveUser(){
-        let nombreNewUser=document.getElementById("nombreNewUser").value
+            let nombreNewUser=document.getElementById("nombreNewUser").value
             let passNewUser=document.getElementById("passNewUser").value
             let emailNewUser=document.getElementById("emailNewUser").value
             if (nombreNewUser === ""|| passNewUser=== ""||emailNewUser==="" ){
-                      /*   return Swal.fire(
+                    /*   return Swal.fire(
                     'Sin valores?',
                     'ingrese algun producto?',
                     'question'
                   ) */
-            alert("error")
+                alert("error")
             }else{
-                userNew=new UserNew(nombreNewUser,passNewUser,emailNewUser)
-                
+                    userNew=new UserNew(nombreNewUser,passNewUser,emailNewUser)
                     let restaurar=JSON.parse(localStorage.getItem("dataUser"))
                     if(restaurar===null){
                         dataUser.push(userNew)
+                        
                         localStorage.setItem("dataUser",JSON.stringify(dataUser))
                     }else{
-                    restaurar.forEach(element=>{
-                        dataUser.push(element)
-                    dataUser.push(userNew)
-                    localStorage.removeItem("dataUser")
-                    localStorage.setItem("dataUser",JSON.stringify(dataUser))
+                            alert(JSON.stringify(dataUser))
+                            restaurar.forEach(element=>{
+                            dataUser.push(element)
+                        })
+                        dataUser.push(userNew)
+                        localStorage.removeItem("dataUser")
+                        localStorage.setItem("dataUser",JSON.stringify(dataUser))
+                    }
                     navUsuario = document.getElementById("formInicioUser")
-                        navUsuario.innerHTML=`
-                        <form id="inicioSession">
-                            <input type="email" id="emailUsActive" placeholder="Ingrese email de usuario">
-                            <input type="password" id="passwUsActive" placeholder="Ingrese Contraseña">
-                            <button type="submit">Inicie Session </button>
-                            <button type="button" onclick="nuevoUser()">crear Usuario </button>
-                        </form>`
-                    })
-                    location.reload()
-            }
+                        navUsuario.innerHTML=porcionCode
     }
     }
     function nuevoUser(){
         navUsuario = document.getElementById("formInicioUser")
         navUsuario.innerHTML=`
         <form  id="formNewUser">
-            <h4>BIENVENIDO A MERCADO ASSISTENS</h4>
-            <br>
-                <h5>Crea a tu Usuario</h5>
+            <h5>Crea a tu Usuario</h5>
             <input type="text" placeholder="ingresa un nombre" id="nombreNewUser">
             <input type="password" placeholder="ingresa una contraseña" id="passNewUser"> 
             <input type="email" placeholder="ingresa un E-mail"  id="emailNewUser">
-            <button type="button" onclick="saveUser()">crear useruario</button>
+            <div>
+            <button type="button" onclick="saveUser()">Crear</button>
+            <button type="button" id="xSession" onclick="cerrarSession()">volver</button>
+            </div>
         </form>
         `
     }

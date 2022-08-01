@@ -1,15 +1,135 @@
 [
     {
+      "id": "000",
       "nombre": "arroz",
       "precio": "50",
-      "stock": "100"
+      "stock": "100",
+      "imagen":""
     },
-    {
+    { "id": "001",
       "nombre": "fideo",
       "precio": "30",
       "stock": "100"
     },
+    { "id": "002",
+      "nombre": "leche ",
+      "precio": "40",
+      "stock": "100"
+    },
+    { "id": "003",
+      "nombre": "carne",
+      "precio": "100",
+      "stock": "100"
+    },
+    { "id": "004",
+      "nombre": "lenteja",
+      "precio": "60",
+      "stock": "100"
+    },
+    { "id": "005",
+      "nombre": "batata",
+      "precio": "80",
+      "stock": "100"
+    },
+    { "id": "006",
+      "nombre": "berenjena",
+      "precio": "90",
+      "stock": "200"
+    },
+    { "id": "007",
+      "nombre": "juego",
+      "precio": "20",
+      "stock": "400"
+    },
+    { "id": "008",
+      "nombre": "manteca",
+      "precio": "60",
+      "stock": "100"
+    },
+    { "id": "009",
+      "nombre": "tomate",
+      "precio": "80",
+      "stock": "300"
+    },
+    {  "id": "010",
+      "nombre": "leche ",
+      "precio": "40",
+      "stock": "100"
+    },
+    { "id": "011",
+      "nombre": "carne",
+      "precio": "100",
+      "stock": "100"
+    },
+    { "id": "012",
+      "nombre": "lenteja",
+      "precio": "60",
+      "stock": "100"
+    },
+    { "id": "013",
+      "nombre": "batata",
+      "precio": "80",
+      "stock": "100"
+    },
+    { "id": "14",
+      "nombre": "berenjena",
+      "precio": "90",
+      "stock": "200"
+    },
     {
+      "nombre": "juego",
+      "precio": "20",
+      "stock": "400"
+    },
+    {
+      "nombre": "manteca",
+      "precio": "60",
+      "stock": "100"
+    },
+    {
+      "nombre": "tomate",
+      "precio": "80",
+      "stock": "300"
+    },{
+      "nombre": "leche ",
+      "precio": "40",
+      "stock": "100"
+    },
+    {
+      "nombre": "carne",
+      "precio": "100",
+      "stock": "100"
+    },
+    {
+      "nombre": "lenteja",
+      "precio": "60",
+      "stock": "100"
+    },
+    {
+      "nombre": "batata",
+      "precio": "80",
+      "stock": "100"
+    },
+    {
+      "nombre": "berenjena",
+      "precio": "90",
+      "stock": "200"
+    },
+    {
+      "nombre": "juego",
+      "precio": "20",
+      "stock": "400"
+    },
+    {
+      "nombre": "manteca",
+      "precio": "60",
+      "stock": "100"
+    },
+    {
+      "nombre": "tomate",
+      "precio": "80",
+      "stock": "300"
+    },{
       "nombre": "leche ",
       "precio": "40",
       "stock": "100"
