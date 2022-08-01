@@ -1,0 +1,52 @@
+[
+    {
+      "nombre": "arroz",
+      "precio": "50",
+      "stock": "100"
+    },
+    {
+      "nombre": "fideo",
+      "precio": "30",
+      "stock": "100"
+    },
+    {
+      "nombre": "leche ",
+      "precio": "40",
+      "stock": "100"
+    },
+    {
+      "nombre": "carne",
+      "precio": "100",
+      "stock": "100"
+    },
+    {
+      "nombre": "lenteja",
+      "precio": "60",
+      "stock": "100"
+    },
+    {
+      "nombre": "batata",
+      "precio": "80",
+      "stock": "100"
+    },
+    {
+      "nombre": "berenjena",
+      "precio": "90",
+      "stock": "200"
+    },
+    {
+      "nombre": "juego",
+      "precio": "20",
+      "stock": "400"
+    },
+    {
+      "nombre": "manteca",
+      "precio": "60",
+      "stock": "100"
+    },
+    {
+      "nombre": "tomate",
+      "precio": "80",
+      "stock": "300"
+    }
+  ]

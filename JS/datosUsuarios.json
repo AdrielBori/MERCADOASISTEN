@@ -1,0 +1,32 @@
+[
+    {
+        "nombre": "brian",
+        "email": "bori@gmail.com",
+        "password":"123456",
+        "compras":[]
+      },
+      {
+        "nombre": "karen",
+        "email": "karen@gmail.com",
+        "password":"123456",
+        "compras":[]
+      },
+      {
+        "nombre": "alan",
+        "email": "alan@gmail.com",
+        "password":"123456",
+        "compras":[]
+      },
+      {
+        "nombre": "axel",
+        "email": "axel@gmail.com",
+        "password":"123456",
+        "compras":[]
+      },
+      {
+        "nombre": "morena",
+        "email": "morena@gmail.com",
+        "password":"123456",
+        "compras":[]
+      }
+]
